@@ -1,0 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&family=Open+Sans&family=Questrial&family=Roboto:wght@400;700&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+body {
+  background-color: #f8f1f1;
+  font-family: 'Lato', sans-serif;
+  position: relative;
+}
+
+main {
+  padding-top: 15vh; /* because navbar with 10vh height is position: fixed */
+  padding-right: 15vw;
+  padding-left: 15vw;
+}

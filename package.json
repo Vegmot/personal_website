@@ -1,0 +1,11 @@
+{
+  "name": "anthonyswebsite",
+  "version": "1.0.0",
+  "description": "Anthony's personal website",
+  "main": "server.js",
+  "scripts": {
+    "client": "npm start --prefix frontend"
+  },
+  "author": "Anthony",
+  "license": "ISC"
+}

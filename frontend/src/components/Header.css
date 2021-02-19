@@ -1,0 +1,141 @@
+/* variables */
+:root {
+  --primary-color: #350b40;
+  --secondary-color: #4e3d53;
+  --background-color: #f8f1f1;
+}
+
+#main-nav {
+  background-color: var(--primary-color);
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#main-nav-items {
+  padding: 0;
+  display: none;
+}
+
+#toggle {
+  display: block;
+  position: absolute;
+  top: 5vh;
+  left: 5vw;
+  cursor: pointer;
+  color: var(--primary-color);
+}
+
+#main-nav ul li {
+  list-style-type: none;
+  font-size: 1.3rem;
+  text-align: center;
+  padding: 20px;
+}
+
+#main-nav ul li a {
+  text-decoration: none;
+  color: var(--background-color);
+}
+
+.mobileMenuActive {
+  width: 100vw;
+}
+
+@media (min-width: 800px) {
+  /* main-nav */
+  #main-nav {
+    background-color: var(--primary-color);
+    font-size: 1.6rem;
+  }
+
+  .main-nav {
+    width: 100vw;
+    height: 10vh;
+    position: fixed;
+    box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  #main-nav-items {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  #toggle {
+    display: none;
+  }
+
+  /* custom */
+  /* https://stackoverflow.com/questions/51719399/how-to-implement-transition-effect-for-displaying-underline-on-hovering-a-react */
+
+  ol,
+  ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  li {
+    display: inline-block;
+    padding: 0 10px;
+    margin: auto 3vw;
+  }
+
+  a {
+    text-decoration: none;
+    position: relative;
+    display: block;
+    padding: 16px 0;
+    margin: 0 12px;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    transition: color 0.1s, background-color 0.1s;
+    color: var(--background-color);
+  }
+
+  a:hover {
+    color: var(--background-color);
+  }
+
+  a:focus,
+  a:active {
+    color: var(--background-color);
+  }
+
+  /* white underline when hover and active */
+  a::before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 100%;
+    height: 3px;
+    width: 100%;
+    background-color: var(--background-color);
+    -webkit-transform-origin: center top;
+    transform-origin: center top;
+    -webkit-transform: scale(0, 1);
+    transform: scale(0, 1);
+    transition: color 0.1s, -webkit-transform 0.2s ease-out;
+    transition: color 0.1s, transform 0.2s ease-out;
+    transition: color 0.1s, transform 0.2s ease-out,
+      -webkit-transform 0.2s ease-out;
+  }
+  /* white underline when hover and active */
+
+  a:active::before {
+    background-color: var(--primary-color);
+  }
+
+  a:hover::before,
+  a:focus::before {
+    -webkit-transform-origin: center top;
+    transform-origin: center top;
+    -webkit-transform: scale(1, 1);
+    transform: scale(1, 1);
+  }
+}
